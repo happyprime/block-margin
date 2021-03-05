@@ -42,7 +42,7 @@ function MarginToolbar( { onChange, value } ) {
 	// The icon reflects either the current value and defaults to `larger`.
 	const icon = value
 		? controlsData[ value ].icon
-		: controlsData[ 'larger' ].icon;
+		: marginLarger;
 
 	// Create an array to populate with the controls.
 	const controls = [];
