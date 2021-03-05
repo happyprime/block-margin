@@ -6,11 +6,21 @@ import { ToolbarGroup } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
 
 // Internal dependencies
-import { marginSmall, marginMedium, marginLarge, marginLarger } from './icons';
+import {
+	marginZero,
+	marginSmall,
+	marginMedium,
+	marginLarge,
+	marginLarger,
+} from './icons';
 
-// Defines the key, icon and title for each control.
-// Passed throuh a filter to allow for customization.
+// Defines the icon and title for each control option.
+// Passed through a filter to allow for customization.
 const controlsData = applyFilters( 'blockMargin.controls', {
+	zero: {
+		icon: marginZero,
+		title: __( 'Add zero top margin' ),
+	},
 	small: {
 		icon: marginSmall,
 		title: __( 'Add small top margin' ),

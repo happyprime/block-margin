@@ -59,8 +59,16 @@ function register_attribute( $block_type ) {
 		$block_type->attributes = array();
 	}
 
-	$default_options = array( '', 'small', 'medium', 'large', 'larger' );
-	$options         = apply_filters( 'block_margin_options', $default_options );
+	$default_options = array(
+		'',
+		'zero',
+		'small',
+		'medium',
+		'large',
+		'larger',
+	);
+
+	$options = apply_filters( 'block_margin_options', $default_options );
 
 	if ( ! array_key_exists( 'margin', $block_type->attributes ) ) {
 		$block_type->attributes['margin'] = array(

@@ -37,6 +37,10 @@ A filter used to control the options allowed in the controls. It receives an obj
 
 ```javascript
 {
+	zero: {
+		icon: marginZero,
+		title: __( 'Add zero top margin' ),
+	},
 	small: {
 		icon: marginSmall,
 		title: __( 'Add small top margin' ),
