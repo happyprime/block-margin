@@ -72,7 +72,7 @@ const withToolbarControls = createHigherOrderComponent(
 			</Fragment>
 		);
 	},
-	'withToolbarControls'
+	'withToolbarControls',
 );
 
 /**
@@ -99,7 +99,7 @@ const withDataMargin = createHigherOrderComponent(
 		const wrapperProps = { ...props.wrapperProps, 'data-margin': margin };
 
 		return <BlockListBlock { ...props } wrapperProps={ wrapperProps } />;
-	}
+	},
 );
 
 /**
@@ -128,23 +128,23 @@ function addAssignedMargin( props, blockType, attributes ) {
 addFilter(
 	'blocks.registerBlockType',
 	'blockMargin/addAttribute',
-	addAttribute
+	addAttribute,
 );
 
 addFilter(
 	'editor.BlockListBlock',
 	'blockMargin/editor/with-data-margin',
-	withDataMargin
+	withDataMargin,
 );
 
 addFilter(
 	'editor.BlockEdit',
 	'blockMargin/editor/with-toolbar-controls',
-	withToolbarControls
+	withToolbarControls,
 );
 
 addFilter(
 	'blocks.getSaveContent.extraProps',
 	'blockMargin/addAssignedMargin',
-	addAssignedMargin
+	addAssignedMargin,
 );
