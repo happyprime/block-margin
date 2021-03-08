@@ -91,8 +91,8 @@ function apply( $block_type, $block_attributes ) {
 	$has_block_margin = array_key_exists( 'margin', $block_attributes );
 
 	if ( $has_block_margin ) {
-		$attributes['class'] = sprintf( 'has-%s-margin-top', $block_attributes['margin'] );
+		$block_attributes['class'] = sprintf( 'has-%s-margin-top', $block_attributes['margin'] );
 	}
 
-	return $attributes;
+	return $block_attributes;
 }
