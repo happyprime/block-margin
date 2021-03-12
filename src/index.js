@@ -14,7 +14,8 @@ import { addFilter, applyFilters } from '@wordpress/hooks';
 import MarginToolbar from './toolbar';
 
 // Names of the blocks from which to exclude the margin controls.
-// Passed through a filter to allow for customization. Empty by default.
+// Passed through a filter to allow for customization.
+// Empty by default.
 const excludedBlocks = applyFilters( 'blockMargin.excludedBlocks', [] );
 
 /**
@@ -44,8 +45,7 @@ function addAttribute( settings ) {
 }
 
 /**
- * Override the default edit UI to include new toolbar controls for
- * block margin, if block defines support.
+ * Include the margin toolbar controls to the edit UI of allowed blocks.
  *
  * @param  {Function} BlockEdit Original component
  * @return {Function}           Wrapped component
@@ -76,7 +76,7 @@ const withToolbarControls = createHigherOrderComponent(
 );
 
 /**
- * Override the default block element to add margin wrapper props.
+ * Add a margin class to the block wrapper if the margin attribute is set.
  *
  * @param  {Function} BlockListBlock Original component
  * @return {Function}                Wrapped component
@@ -91,20 +91,19 @@ const withDataMargin = createHigherOrderComponent(
 
 		const { margin } = attributes;
 
-		// Return early if there's no margin value.
-		if ( margin === undefined ) {
-			return <BlockListBlock { ...props } />;
+		// Add a margin class if the margin attribute is set.
+		if ( undefined !== margin ) {
+			props.className = classnames( props.className, {
+				[ `has-${ margin }-margin-top` ]: margin,
+			} );
 		}
 
-		const wrapperProps = { ...props.wrapperProps, 'data-margin': margin };
-
-		return <BlockListBlock { ...props } wrapperProps={ wrapperProps } />;
+		return <BlockListBlock { ...props } />;
 	},
 );
 
 /**
- * Override props assigned to save component to inject margin class name if
- * block supports it.
+ * Add a margin class to the block save component if a margin is set.
  *
  * @param  {Object} props      Additional props applied to save element
  * @param  {Object} blockType  Block type
