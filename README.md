@@ -26,7 +26,7 @@ function excludeMarginControlsFromBlocks() {
 
 addFilter(
 	'blockMargin.excludedBlocks',
-	'printmag/blockMargin/excludeBlocks',
+	'myprefix/blockMargin/excludeBlocks',
 	excludeMarginControlsFromBlocks,
 );
 ```
@@ -84,7 +84,7 @@ function filterBlockMarginControls( defaults ) {
 
 addFilter(
 	'blockMargin.controls',
-	'printmag/blockMargin/controls',
+	'myprefix/blockMargin/controls',
 	filterBlockMarginControls,
 );
 ```
