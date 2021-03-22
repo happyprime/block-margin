@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+	<path id="negativelarger" d="M5 6.5h14v11H5zm0 8V16h2.5v-1.5zm3.8 0V16h2.5v-1.5zm3.9 0V16h2.5v-1.5zm3.8 0V16H19v-1.5z"/>
+	<path id="negativelarge" d="M5 6.5h14v11H5zm0 6V14h2.5v-1.5zm3.8 0V14h2.5v-1.5zm3.9 0V14h2.5v-1.5zm3.8 0V14H19v-1.5z"/>
+	<path id="negativemedium" d="M5 6.5h14v11H5zm0 4V12h2.5v-1.5zm3.8 0V12h2.5v-1.5zm3.9 0V12h2.5v-1.5zm3.8 0V12H19v-1.5z"/>
+	<path id="negativesmall" d="M5 6.5h14v11H5zm0 2V10h2.5V8.5zm3.8 0V10h2.5V8.5zm3.9 0V10h2.5V8.5zm3.8 0V10H19V8.5z"/>
+	<path id="zero" d="M19 6.5v11H5v-11z"/>
+	<path id="small" d="M5 9.5h14v9H5zm0-4v2h14v-2z"/>
+	<path id="medium" d="M5 9.5h14v10H5zm0-5v2h14v-2z"/>
+	<path id="large" d="M5 10.5h14v10H5zm0-7v2h14v-2z"/>
+	<path id="larger" d="M5 11.5h14v10H5zm0-9v2h14v-2z"/>
+</svg>
