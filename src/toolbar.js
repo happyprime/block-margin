@@ -14,9 +14,8 @@ import {
 	marginLarger,
 } from './icons';
 
-// Defines the icon and title for each control option.
-// Passed through a filter to allow for customization.
-const controlsData = applyFilters( 'blockMargin.controls', {
+// Default control icons and titles.
+const defaultControlsData = {
 	zero: {
 		icon: marginZero,
 		title: __( 'Add zero top margin' ),
@@ -37,7 +36,7 @@ const controlsData = applyFilters( 'blockMargin.controls', {
 		icon: marginLarger,
 		title: __( 'Add larger top margin' ),
 	},
-} );
+};
 
 function MarginToolbar( { onChange, value } ) {
 	const handleClick = ( next ) => {
@@ -48,6 +47,9 @@ function MarginToolbar( { onChange, value } ) {
 			onChange( next );
 		}
 	};
+
+	// Pass default controls through a filter to allow for customization.
+	const controlsData = applyFilters( 'blockMargin.controls', defaultControlsData );
 
 	// The icon reflects either the current value and defaults to `larger`.
 	const icon = value
