@@ -16,65 +16,63 @@ import {
 
 // Defines the icon and title for each control option.
 // Passed through a filter to allow for customization.
-const controlsData = applyFilters( 'blockMargin.controls', {
+const controlsData = applyFilters('blockMargin.controls', {
 	zero: {
 		icon: marginZero,
-		title: __( 'Add zero top margin' ),
+		title: __('Add zero top margin'),
 	},
 	small: {
 		icon: marginSmall,
-		title: __( 'Add small top margin' ),
+		title: __('Add small top margin'),
 	},
 	medium: {
 		icon: marginMedium,
-		title: __( 'Add medium top margin' ),
+		title: __('Add medium top margin'),
 	},
 	large: {
 		icon: marginLarge,
-		title: __( 'Add large top margin' ),
+		title: __('Add large top margin'),
 	},
 	larger: {
 		icon: marginLarger,
-		title: __( 'Add larger top margin' ),
+		title: __('Add larger top margin'),
 	},
-} );
+});
 
-function MarginToolbar( { onChange, value } ) {
-	const handleClick = ( next ) => {
-		if ( next === value ) {
+function MarginToolbar({ onChange, value }) {
+	const handleClick = (next) => {
+		if (next === value) {
 			// A click on an already selected control should deselect it.
-			onChange( undefined );
+			onChange(undefined);
 		} else {
-			onChange( next );
+			onChange(next);
 		}
 	};
 
 	// The icon reflects either the current value and defaults to `larger`.
-	const icon = value
-		? controlsData[ value ].icon
-		: marginLarger;
+	const icon = value ? controlsData[value].icon : marginLarger;
 
 	// Create an array to populate with the controls.
 	const controls = [];
 
 	// Populate the controls array.
-	Object.entries( controlsData ).forEach( ( [ key, control ] ) => {
-		controls.push( {
+	Object.entries(controlsData).forEach(([key, control]) => {
+		controls.push({
 			name: key,
 			icon: control.icon,
 			title: control.title,
 			isActive: value === key,
 			role: 'menuitemradio',
-			onClick: () => handleClick( key ),
-		} );
-	} );
+			onClick: () => handleClick(key),
+		});
+	});
 
 	return (
 		<ToolbarGroup
-			icon={ icon }
-			label={ __( 'Change block margin' ) }
-			isCollapsed={ true }
-			controls={ controls }
+			icon={icon}
+			label={__('Change block margin')}
+			isCollapsed={true}
+			controls={controls}
 		/>
 	);
 }
