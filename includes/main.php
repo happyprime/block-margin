@@ -1,14 +1,4 @@
 <?php
-/**
- * Plugin Name: Block Margin
- * Plugin URI:  https://github.com/happyprime/block-margin/
- * Description: Add margin controls to blocks.
- * Version:     0.1.0
- * Author:      Happy Prime
- * Author URI:  https://happyprime.co/
- * License:     GPL2
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- */
 
 namespace BlockMargin;
 
@@ -19,11 +9,11 @@ add_action( 'init', __NAMESPACE__ . '\block_supports_init' );
  * Enqueue assets for the block editor.
  */
 function enqueue_block_editor_assets() {
-	$asset_data = require_once __DIR__ . '/build/index.asset.php';
+	$asset_data = require_once dirname( __DIR__ ) . '/build/index.asset.php';
 
 	wp_enqueue_script(
 		'block-margin',
-		plugin_dir_url( __FILE__ ) . 'build/index.js',
+		plugin_dir_url( __DIR__ ) . 'build/index.js',
 		$asset_data['dependencies'],
 		$asset_data['version'],
 		true
