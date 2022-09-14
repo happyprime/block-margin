@@ -1,0 +1,26 @@
+{
+	"name": "happyprime/block-margin",
+	"description": "Add block margins.",
+	"type": "wordpress-plugin",
+	"license": "GPLv2+",
+	"require": {
+		"wp-cli/dist-archive-command": "^2.0",
+		"wp-coding-standards/wpcs": "^2.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+		"phpcompatibility/php-compatibility": "^9.3",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"phpunit/phpunit": "^5 || ^7 || ^8 || ^9",
+		"yoast/phpunit-polyfills": "^1.0"
+	},
+	"scripts": {
+		"phpcs": "vendor/bin/phpcs",
+		"phpcbf": "vendor/bin/phpcbf",
+		"phpunit": "vendor/bin/phpunit"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"composer/installers": true
+		}
+	}
+}
