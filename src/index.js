@@ -16,7 +16,7 @@ import MarginToolbar from './toolbar';
 // Names of the blocks from which to exclude the margin controls.
 // Passed through a filter to allow for customization.
 // Empty by default.
-const excludedBlocks = applyFilters('blockMargin.excludedBlocks', []);
+const excludedBlocks = applyFilters( 'blockMargin.excludedBlocks', [] );
 
 /**
  * Extend block attributes to include `margin`.
@@ -24,17 +24,17 @@ const excludedBlocks = applyFilters('blockMargin.excludedBlocks', []);
  * @param {Object} settings Original block settings
  * @return {Object}          Filtered block settings
  */
-function addAttribute(settings) {
-	if (excludedBlocks.includes(settings.name)) {
+function addAttribute( settings ) {
+	if ( excludedBlocks.includes( settings.name ) ) {
 		return settings;
 	}
 
 	// Allow blocks to specify their own attribute definition.
-	if (settings.attributes.margin) {
+	if ( settings.attributes.margin ) {
 		return settings;
 	}
 
-	if (settings.attributes) {
+	if ( settings.attributes ) {
 		settings.attributes.margin = {
 			type: 'string',
 			default: '',
@@ -51,9 +51,9 @@ function addAttribute(settings) {
  * @return {Function}           Wrapped component
  */
 const withToolbarControls = createHigherOrderComponent(
-	(BlockEdit) => (props) => {
-		if (excludedBlocks.includes(props.name)) {
-			return <BlockEdit {...props} />;
+	( BlockEdit ) => ( props ) => {
+		if ( excludedBlocks.includes( props.name ) ) {
+			return <BlockEdit { ...props } />;
 		}
 
 		const { attributes, setAttributes } = props;
@@ -62,11 +62,13 @@ const withToolbarControls = createHigherOrderComponent(
 			<Fragment>
 				<BlockControls key="margin-controls">
 					<MarginToolbar
-						value={attributes.margin}
-						onChange={(value) => setAttributes({ margin: value })}
+						value={ attributes.margin }
+						onChange={ ( value ) =>
+							setAttributes( { margin: value } )
+						}
 					/>
 				</BlockControls>
-				<BlockEdit key="edit" {...props} />
+				<BlockEdit key="edit" { ...props } />
 			</Fragment>
 		);
 	},
@@ -80,9 +82,9 @@ const withToolbarControls = createHigherOrderComponent(
  * @return {Function}                Wrapped component
  */
 const withDataMargin = createHigherOrderComponent(
-	(BlockListBlock) => (props) => {
-		if (excludedBlocks.includes(props.name)) {
-			return <BlockListBlock {...props} />;
+	( BlockListBlock ) => ( props ) => {
+		if ( excludedBlocks.includes( props.name ) ) {
+			return <BlockListBlock { ...props } />;
 		}
 
 		const { attributes } = props;
@@ -90,13 +92,13 @@ const withDataMargin = createHigherOrderComponent(
 		const { margin } = attributes;
 
 		// Add a margin class if the margin attribute is set.
-		if (undefined !== margin) {
-			props.className = classnames(props.className, {
-				[`has-${margin}-margin-top`]: margin,
-			});
+		if ( undefined !== margin ) {
+			props.className = classnames( props.className, {
+				[ `has-${ margin }-margin-top` ]: margin,
+			} );
 		}
 
-		return <BlockListBlock {...props} />;
+		return <BlockListBlock { ...props } />;
 	}
 );
 
@@ -108,21 +110,25 @@ const withDataMargin = createHigherOrderComponent(
  * @param {Object} attributes Block attributes
  * @return {Object}            Filtered props applied to save element
  */
-function addAssignedMargin(props, blockType, attributes) {
-	if (excludedBlocks.includes(blockType.name)) {
+function addAssignedMargin( props, blockType, attributes ) {
+	if ( excludedBlocks.includes( blockType.name ) ) {
 		return props;
 	}
 
 	const { margin } = attributes;
 
-	props.className = classnames(props.className, {
-		[`has-${margin}-margin-top`]: margin,
-	});
+	props.className = classnames( props.className, {
+		[ `has-${ margin }-margin-top` ]: margin,
+	} );
 
 	return props;
 }
 
-addFilter('blocks.registerBlockType', 'blockMargin/addAttribute', addAttribute);
+addFilter(
+	'blocks.registerBlockType',
+	'blockMargin/addAttribute',
+	addAttribute
+);
 
 addFilter(
 	'editor.BlockListBlock',
