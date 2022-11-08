@@ -2,10 +2,10 @@
 Contributors: jeremyfelt, slocker, philcable, wpgirl369
 Tags: spacing, vertical, margin
 Requires at least: 5.9
-Tested up to: 5.9
-Stable tag: 0.0.1
+Tested up to: 6.1
+Stable tag: 0.1.1
 License: GPLv2 or later
-Requires PHP: 7.2
+Requires PHP: 7.4
 
 Add vertical spacing between blocks.
 
@@ -14,6 +14,10 @@ Add vertical spacing between blocks.
 A longer description of the plugin.
 
 ## Changelog
+
+### 0.1.1
+
+* Fix PHP notice when applying block supports attributes.
 
 ### 0.0.1
 

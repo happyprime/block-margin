@@ -3,7 +3,7 @@
  * Plugin Name: Block Margin
  * Plugin URI:  https://github.com/happyprime/block-margin/
  * Description: Add margin controls to blocks.
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author:      Happy Prime
  * Author URI:  https://happyprime.co/
  * License:     GPL2
