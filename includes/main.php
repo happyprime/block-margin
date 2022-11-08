@@ -78,11 +78,13 @@ function register_attribute( $block_type ) {
  * @return array Block margin CSS classes and inline styles.
  */
 function apply( $block_type, $block_attributes ) {
+	$attributes = array();
+
 	$has_block_margin = array_key_exists( 'margin', $block_attributes );
 
 	if ( $has_block_margin ) {
-		$block_attributes['class'] = sprintf( 'has-%s-margin-top', $block_attributes['margin'] );
+		$attributes['class'] = sprintf( 'has-%s-margin-top', $block_attributes['margin'] );
 	}
 
-	return $block_attributes;
+	return $attributes;
 }
