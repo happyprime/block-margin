@@ -8,6 +8,8 @@
  * Author URI:  https://happyprime.co/
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @package block-margin
  */
 
 // If this file is called directly, abort.

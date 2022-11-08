@@ -1,4 +1,9 @@
 <?php
+/**
+ * The main plugin.
+ *
+ * @package block-margin
+ */
 
 namespace BlockMargin;
 
