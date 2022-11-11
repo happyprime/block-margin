@@ -91,14 +91,15 @@ const withDataMargin = createHigherOrderComponent(
 
 		const { margin } = attributes;
 
+		let marginClass = '';
+
 		// Add a margin class if the margin attribute is set.
 		if ( undefined !== margin ) {
-			props.className = classnames( props.className, {
-				[ `has-${ margin }-margin-top` ]: margin,
-			} );
+			marginClass = `has-${ margin }-margin-top`;
 		}
 
-		return <BlockListBlock { ...props } />;
+		const className = classnames( props?.className, marginClass );
+		return <BlockListBlock { ...props } className={ className } />;
 	}
 );
 
