@@ -1,6 +1,6 @@
 {
 	"name": "block-margin",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Add margin controls to blocks.",
 	"author": "Happy Prime",
 	"license": "GPL-2.0-or-later",
@@ -15,7 +15,7 @@
 		"packages-update": "wp-scripts packages-update"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^24.5.0",
+		"@wordpress/scripts": "^24.6.0",
 		"classnames": "^2.3.2"
 	}
 }
