@@ -1,4 +1,5 @@
-name: PHPCS (Default)
+# This file is managed in https://github.com/happyprime/projects
+name: PHPCS (Default, PHP 8.2)
 
 on: pull_request
 
