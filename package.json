@@ -4,7 +4,28 @@
 	"description": "Add margin controls to blocks.",
 	"author": "Happy Prime",
 	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"gutenberg",
+		"gutenberg-blocks",
+		"gutenberg-plugin",
+		"wordpress",
+		"wordpress-plugin"
+	],
+	"homepage": "https://github.com/happyprime/block-margin/",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/happyprime/block-margin.git"
+	},
+	"bugs": {
+		"url": "https://github.com/happyprime/block-margin/issues"
+	},
 	"main": "build/index.js",
+	"devDependencies": {
+		"@wordpress/npm-package-json-lint-config": "^5.10.0",
+		"@wordpress/scripts": "^30.16.0",
+		"classnames": "^2.5.1",
+		"npm-package-json-lint": "^8.0.0"
+	},
 	"scripts": {
 		"build": "wp-scripts build",
 		"format:js": "wp-scripts format-js",
@@ -12,10 +33,10 @@
 		"lint:js": "wp-scripts lint-js",
 		"fix:js": "wp-scripts lint-js --fix",
 		"start": "wp-scripts start",
-		"packages-update": "wp-scripts packages-update"
+		"packages-update": "wp-scripts packages-update",
+		"lint:package": "node ./node_modules/npm-package-json-lint/dist/cli.js ./"
 	},
-	"devDependencies": {
-		"@wordpress/scripts": "^30.16.0",
-		"classnames": "^2.5.1"
+	"npmpackagejsonlint": {
+		"extends": "@wordpress/npm-package-json-lint-config"
 	}
 }
